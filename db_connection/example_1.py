@@ -6,19 +6,19 @@ client = MongoClient(conn_str, serverSelectionTimeoutMS=5000)
 mydb = client["ettoday"]
 my_collection = mydb["user"]
 
-my_set = set()
+
 
 try:
-    topic_dict = [{"name": "Tom", "age": 26}, {"name": "Mary", "age": 18}, {"name": "Georgy", "age": 25}]
-
-    link_id = my_collection.insert_many(topic_dict)  # create
-
-    for x in my_collection.find():  # Read
-        print(x)
-    myquery = {"name": "Georgy"}
-    print("====================================")
-    for x in my_collection.find(myquery):
-        print(x)
+    # topic_list = [{"name": "Tom", "age": 26}, {"name": "Mary", "age": 18}, {"name": "Georgy", "age": 25}]
+    #
+    # my_collection.insert_many(topic_list)  # create
+    #
+    # for x in my_collection.find():  # Read
+    #     print(x)
+    # myquery = {"name": "Georgy"}
+    # print("====================================")
+    # for x in my_collection.find(myquery):
+    #     print(x)
     myquery = {"name": "Mary"}
     newvalues = {"$set": {"weight": 43}}
 
